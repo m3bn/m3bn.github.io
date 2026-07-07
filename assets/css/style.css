@@ -314,12 +314,12 @@ a:focus-visible, button:focus-visible {
 /* Layout with a TOC figure beside the reference */
 .publication.with-toc {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 1.4rem;
+  grid-template-columns: 300px 1fr;
+  gap: 1.5rem;
   align-items: center;
 }
 .publication .toc {
-  width: 220px;
+  width: 300px;
   border: 1px solid var(--border);
   border-radius: 6px;
   background: var(--white);
