@@ -291,6 +291,28 @@ a:focus-visible, button:focus-visible {
 }
 .member .links a:hover { background: var(--panel-blue); text-decoration: none; }
 
+/* ---------- Alumni ---------- */
+
+.alumnus { padding: 0.6rem 0; }
+.alumnus + .alumnus { border-top: 1px solid var(--border); }
+.alumnus p { margin-bottom: 0.5rem; }
+
+/* Chips de links en alumni: mismo estilo que en member */
+.alumnus .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.alumnus .links a {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  background: var(--white);
+}
+.alumnus .links a:hover { background: var(--panel-blue); text-decoration: none; }
+
 /* ---------- Publications and conferences ---------- */
 
 .year {
