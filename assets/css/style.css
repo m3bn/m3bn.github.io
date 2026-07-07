@@ -1,32 +1,32 @@
 /* ============================================================
-   M3BN — Grupo de Modelado Molecular de Materiales Blandos
-   y Nanoestructurados · INIFTA · UNLP · CONICET
-   Hoja de estilos compartida por todas las páginas.
-   Paleta de azules basada en softmatter.quimica.unlp.edu.ar
+   M3BN — Molecular Modeling of Soft and Nanostructured
+   Materials · INIFTA · UNLP · CONICET
+   Shared stylesheet for all pages.
+   Blue palette based on softmatter.quimica.unlp.edu.ar
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  /* Paleta */
-  --azul-noche: #0a2540;   /* fondos oscuros, footer, hero */
-  --azul: #14508c;         /* color institucional principal */
-  --azul-medio: #2e7cc4;   /* hovers, enlaces */
-  --celeste: #7db8e8;      /* acentos sobre fondo oscuro */
-  --hielo: #f2f7fc;        /* fondo de página */
-  --celeste-panel: #dcebf8;/* paneles y tarjetas destacadas */
-  --tinta: #16283a;        /* texto principal */
-  --gris-texto: #4a5d70;   /* texto secundario */
-  --blanco: #ffffff;
-  --borde: #c9dcee;
+  /* Palette */
+  --navy: #0a2540;         /* dark backgrounds: header, footer, hero */
+  --blue: #14508c;         /* main institutional color */
+  --mid-blue: #2e7cc4;     /* hovers, links */
+  --sky: #7db8e8;          /* accents on dark backgrounds */
+  --ice: #f2f7fc;          /* page background */
+  --panel-blue: #dcebf8;   /* panels and highlighted cards */
+  --ink: #16283a;          /* main text */
+  --gray-text: #4a5d70;    /* secondary text */
+  --white: #ffffff;
+  --border: #c9dcee;
 
-  /* Tipografía */
+  /* Typography */
   --f-display: 'Space Grotesk', sans-serif;
   --f-body: 'Source Sans 3', sans-serif;
   --f-mono: 'JetBrains Mono', monospace;
 
-  --ancho: 1080px;
-  --radio: 10px;
+  --max-width: 1080px;
+  --radius: 10px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -41,34 +41,34 @@ body {
   font-family: var(--f-body);
   font-size: 1.05rem;
   line-height: 1.65;
-  color: var(--tinta);
-  background: var(--hielo);
+  color: var(--ink);
+  background: var(--ice);
 }
 
 img { max-width: 100%; display: block; }
 
-a { color: var(--azul-medio); text-decoration: none; }
+a { color: var(--mid-blue); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible {
-  outline: 3px solid var(--azul-medio);
+  outline: 3px solid var(--mid-blue);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-.contenedor { max-width: var(--ancho); margin: 0 auto; padding: 0 1.25rem; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.25rem; }
 
-/* ---------- Header y navegación ---------- */
+/* ---------- Header and navigation ---------- */
 
 .header {
-  background: var(--azul-noche);
-  color: var(--blanco);
+  background: var(--navy);
+  color: var(--white);
   position: sticky;
   top: 0;
   z-index: 50;
-  border-bottom: 3px solid var(--azul-medio);
+  border-bottom: 3px solid var(--mid-blue);
 }
 
-.header .contenedor {
+.header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,27 +76,27 @@ a:focus-visible, button:focus-visible {
   min-height: 64px;
 }
 
-.marca {
+.brand {
   display: flex;
   align-items: baseline;
   gap: 0.6rem;
-  color: var(--blanco);
+  color: var(--white);
   text-decoration: none;
 }
-.marca:hover { text-decoration: none; }
+.brand:hover { text-decoration: none; }
 
-.marca .sigla {
+.brand .acronym {
   font-family: var(--f-display);
   font-weight: 700;
   font-size: 1.45rem;
   letter-spacing: 0.02em;
 }
-.marca .sigla span { color: var(--celeste); }
+.brand .acronym span { color: var(--sky); }
 
-.marca .instituto {
+.brand .institute {
   font-family: var(--f-mono);
   font-size: 0.72rem;
-  color: var(--celeste);
+  color: var(--sky);
   letter-spacing: 0.08em;
 }
 
@@ -115,14 +115,14 @@ a:focus-visible, button:focus-visible {
   font-size: 0.95rem;
   border-radius: 6px;
 }
-.nav a:hover { background: rgba(125, 184, 232, 0.15); text-decoration: none; color: var(--blanco); }
+.nav a:hover { background: rgba(125, 184, 232, 0.15); text-decoration: none; color: var(--white); }
 
-/* Página activa: una "cuenta" (bead) celeste debajo del nombre */
-.nav a.activo {
-  color: var(--blanco);
+/* Active page: a sky-blue "bead" under the tab name */
+.nav a.active {
+  color: var(--white);
   position: relative;
 }
-.nav a.activo::after {
+.nav a.active::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -131,14 +131,14 @@ a:focus-visible, button:focus-visible {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--celeste);
+  background: var(--sky);
 }
 
 .nav-toggle {
   display: none;
   background: none;
-  border: 2px solid var(--celeste);
-  color: var(--celeste);
+  border: 2px solid var(--sky);
+  color: var(--sky);
   font-family: var(--f-mono);
   font-size: 0.85rem;
   padding: 0.35rem 0.7rem;
@@ -146,11 +146,11 @@ a:focus-visible, button:focus-visible {
   cursor: pointer;
 }
 
-/* ---------- Hero (portada) ---------- */
+/* ---------- Hero (home page) ---------- */
 
 .hero {
-  background: linear-gradient(160deg, var(--azul-noche) 0%, var(--azul) 90%);
-  color: var(--blanco);
+  background: linear-gradient(160deg, var(--navy) 0%, var(--blue) 90%);
+  color: var(--white);
   padding: 4rem 0 3.5rem;
   overflow: hidden;
 }
@@ -169,182 +169,207 @@ a:focus-visible, button:focus-visible {
   font-size: 0.85rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--celeste);
+  color: var(--sky);
 }
 
-.hero p.bajada {
+.hero p.lede {
   max-width: 58ch;
   font-size: 1.15rem;
   color: #d7e6f4;
 }
 
-.hero .cadena { margin-top: 2.5rem; opacity: 0.9; }
+.hero .chain { margin-top: 2.5rem; opacity: 0.9; }
 
-/* ---------- Encabezados de página interior ---------- */
+/* ---------- Inner page headers ---------- */
 
-.cabecera-pagina {
-  background: var(--azul-noche);
-  color: var(--blanco);
+.page-header {
+  background: var(--navy);
+  color: var(--white);
   padding: 2.5rem 0 2rem;
 }
-.cabecera-pagina h1 {
+.page-header h1 {
   font-family: var(--f-display);
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
   margin-top: 0.4rem;
 }
-.cabecera-pagina .eyebrow {
+.page-header .eyebrow {
   font-family: var(--f-mono);
   font-size: 0.8rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--celeste);
+  color: var(--sky);
 }
 
-/* ---------- Secciones ---------- */
+/* ---------- Sections ---------- */
 
-.seccion { padding: 3rem 0; }
+.section { padding: 3rem 0; }
 
-.seccion h2 {
+.section h2 {
   font-family: var(--f-display);
   font-size: 1.6rem;
-  color: var(--azul);
+  color: var(--blue);
   margin-bottom: 1.25rem;
 }
 
-.seccion h3 {
+.section h3 {
   font-family: var(--f-display);
   font-size: 1.15rem;
-  color: var(--azul-noche);
+  color: var(--navy);
   margin-bottom: 0.4rem;
 }
 
-.seccion p + p { margin-top: 0.9rem; }
+.section p + p { margin-top: 0.9rem; }
 
-/* ---------- Tarjetas genéricas ---------- */
+/* ---------- Generic cards ---------- */
 
-.grilla {
+.grid {
   display: grid;
   gap: 1.25rem;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 
-.tarjeta {
-  background: var(--blanco);
-  border: 1px solid var(--borde);
-  border-radius: var(--radio);
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   padding: 1.4rem;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.tarjeta:hover {
+.card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(10, 37, 64, 0.10);
 }
 
-.tarjeta .etiqueta {
+.card .tag {
   font-family: var(--f-mono);
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--azul-medio);
+  color: var(--mid-blue);
 }
 
-/* ---------- Miembros ---------- */
+.card .toc-figure {
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  margin-bottom: 0.9rem;
+  background: var(--white);
+}
 
-.miembro { text-align: left; }
+/* ---------- Members ---------- */
 
-.miembro .foto {
+.member { text-align: left; }
+
+.member .photo {
   width: 110px;
   height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--celeste-panel);
+  border: 3px solid var(--panel-blue);
   margin-bottom: 0.9rem;
-  background: var(--celeste-panel);
+  background: var(--panel-blue);
 }
 
-.miembro .cargo {
+.member .role {
   font-family: var(--f-mono);
   font-size: 0.78rem;
-  color: var(--gris-texto);
+  color: var(--gray-text);
   margin-bottom: 0.5rem;
 }
 
-.miembro .enlaces {
+.member .links {
   margin-top: 0.6rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.miembro .enlaces a {
+.member .links a {
   font-family: var(--f-mono);
   font-size: 0.75rem;
-  border: 1px solid var(--borde);
+  border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.15rem 0.6rem;
 }
-.miembro .enlaces a:hover { background: var(--celeste-panel); text-decoration: none; }
+.member .links a:hover { background: var(--panel-blue); text-decoration: none; }
 
-/* ---------- Publicaciones y congresos ---------- */
+/* ---------- Publications and conferences ---------- */
 
-.anio {
+.year {
   font-family: var(--f-display);
   font-size: 1.35rem;
-  color: var(--azul);
-  border-bottom: 2px solid var(--borde);
+  color: var(--blue);
+  border-bottom: 2px solid var(--border);
   padding-bottom: 0.3rem;
   margin: 2rem 0 1rem;
 }
-.anio:first-of-type { margin-top: 0; }
+.year:first-of-type { margin-top: 0; }
 
-.publicacion {
-  background: var(--blanco);
-  border-left: 4px solid var(--azul-medio);
-  border-radius: 0 var(--radio) var(--radio) 0;
+.publication {
+  background: var(--white);
+  border-left: 4px solid var(--mid-blue);
+  border-radius: 0 var(--radius) var(--radius) 0;
   padding: 1rem 1.25rem;
   margin-bottom: 0.9rem;
 }
 
-.publicacion .titulo { font-weight: 600; }
-.publicacion .autores { color: var(--gris-texto); font-size: 0.95rem; }
-.publicacion .revista { font-style: italic; font-size: 0.95rem; }
-.publicacion .doi {
+/* Layout with a TOC figure beside the reference */
+.publication.with-toc {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.1rem;
+  align-items: center;
+}
+.publication .toc {
+  width: 140px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--white);
+}
+@media (max-width: 560px) {
+  .publication.with-toc { grid-template-columns: 1fr; }
+  .publication .toc { width: 180px; }
+}
+
+.publication .title { font-weight: 600; }
+.publication .authors { color: var(--gray-text); font-size: 0.95rem; }
+.publication .venue { font-style: italic; font-size: 0.95rem; }
+.publication .doi {
   font-family: var(--f-mono);
   font-size: 0.8rem;
 }
 
-.publicacion.poster { border-left-color: var(--celeste); }
+.publication.poster { border-left-color: var(--sky); }
 
-/* ---------- Bloques destacados ---------- */
+/* ---------- Highlighted blocks ---------- */
 
 .panel {
-  background: var(--celeste-panel);
-  border-radius: var(--radio);
+  background: var(--panel-blue);
+  border-radius: var(--radius);
   padding: 1.5rem 1.75rem;
 }
 
-.boton {
+.btn {
   display: inline-block;
-  background: var(--azul);
-  color: var(--blanco);
+  background: var(--blue);
+  color: var(--white);
   font-family: var(--f-display);
   font-weight: 600;
   padding: 0.65rem 1.4rem;
   border-radius: 8px;
   margin-top: 0.75rem;
 }
-.boton:hover { background: var(--azul-medio); text-decoration: none; }
+.btn:hover { background: var(--mid-blue); text-decoration: none; }
 
 /* ---------- Footer ---------- */
 
 .footer {
-  background: var(--azul-noche);
+  background: var(--navy);
   color: #b9cfe4;
   padding: 2.5rem 0 2rem;
   margin-top: 3rem;
   font-size: 0.95rem;
 }
 
-.footer .contenedor {
+.footer .container {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -352,11 +377,11 @@ a:focus-visible, button:focus-visible {
 
 .footer h4 {
   font-family: var(--f-display);
-  color: var(--blanco);
+  color: var(--white);
   margin-bottom: 0.5rem;
 }
 
-.footer a { color: var(--celeste); }
+.footer a { color: var(--sky); }
 
 .footer .legal {
   grid-column: 1 / -1;
@@ -377,10 +402,10 @@ a:focus-visible, button:focus-visible {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--azul-noche);
-    border-bottom: 3px solid var(--azul-medio);
+    background: var(--navy);
+    border-bottom: 3px solid var(--mid-blue);
     padding: 0.5rem 1rem 1rem;
   }
-  .nav.abierta { display: block; }
+  .nav.open { display: block; }
   .nav ul { flex-direction: column; }
 }

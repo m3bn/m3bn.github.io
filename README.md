@@ -1,49 +1,61 @@
-# Sitio web del grupo M3BN
+# M3BN group website
 
-Página del **Grupo de Modelado Molecular de Materiales Blandos y Nanoestructurados** (INIFTA · UNLP · CONICET), alojada en GitHub Pages: https://m3bn.github.io
+Website of the **Molecular Modeling of Soft and Nanostructured Materials** group
+(INIFTA · UNLP · CONICET), hosted on GitHub Pages: https://m3bn.github.io
 
-## Estructura del repositorio
+## Repository structure
 
 ```
 m3bn.github.io/
-├── index.html            # Inicio
-├── investigacion.html    # Líneas de investigación
-├── miembros.html         # Integrantes y alumni
-├── publicaciones.html    # Artículos por año
-├── congresos.html        # Charlas y pósters
-├── software.html         # Repositorios del grupo
-├── contacto.html         # Contacto y convocatorias
+├── index.html            # Home
+├── research.html         # Research lines
+├── members.html          # Members and alumni
+├── publications.html     # Papers by year
+├── conferences.html      # Talks and posters
+├── software.html         # Group repositories
+├── contact.html          # Contact and openings
 ├── assets/
-│   ├── css/style.css     # Estilos compartidos (paleta y tipografías)
-│   ├── js/main.js        # Menú móvil y pestaña activa
-│   └── img/              # Fotos y figuras
+│   ├── css/style.css     # Shared styles (palette and typography)
+│   ├── js/main.js        # Mobile menu and active-tab highlight
+│   └── img/
+│       ├── members/      # Member photos (square, ~400×400 px)
+│       └── tocs/         # TOC / graphical-abstract figures for papers
 └── README.md
 ```
 
-## Cómo editar el contenido
+## Where to upload images
 
-Cada página tiene comentarios `<!-- EDITAR -->` marcando qué reemplazar.
-Los casos más frecuentes:
+- **Member photos** → `assets/img/members/`. Use square images (~400×400 px)
+  and simple lowercase filenames without spaces, e.g. `garcia-ana.jpg`.
+- **Paper TOC figures** → `assets/img/tocs/`. Suggested naming:
+  `YYYY-firstauthor.png`, e.g. `2026-garcia.png`. Keep them under ~200 KB
+  (export at ~600 px wide) so the page loads fast.
 
-- **Agregar una publicación**: en `publicaciones.html`, copiar un bloque
-  `<article class="publicacion">` debajo del año que corresponda.
-- **Agregar un miembro**: en `miembros.html`, copiar un bloque
-  `<article class="tarjeta miembro">` y subir la foto (cuadrada, ~400×400 px)
-  a `assets/img/`.
-- **Agregar una presentación**: en `congresos.html`, igual que publicaciones.
-  Usar `class="publicacion poster"` para pósters.
-- **Novedades de la portada**: editar la sección "Novedades" de `index.html`.
+## How to edit the content
 
-⚠️ El menú de navegación y el footer están repetidos en cada página.
-Si se agrega una pestaña nueva, hay que actualizar el `<nav>` en **todos** los HTML.
+Every page has `<!-- EDIT -->` comments marking what to replace.
+The most common cases:
 
-## Cómo cambiar colores o tipografías
+- **Add a publication**: in `publications.html`, copy an
+  `<article class="publication with-toc">` block under the corresponding year.
+  Point the `<img class="toc">` to the figure in `assets/img/tocs/`.
+  If the paper has no TOC figure, use `class="publication"` and delete the `<img>` line.
+- **Add a member**: in `members.html`, copy an `<article class="card member">`
+  block and upload the photo to `assets/img/members/`.
+- **Add a presentation**: in `conferences.html`, same as publications.
+  Use `class="publication poster"` for posters.
+- **Home-page news**: edit the "News" section of `index.html`.
 
-Todo está definido como variables al inicio de `assets/css/style.css`
-(sección `:root`). Cambiar un color ahí lo cambia en todo el sitio.
+⚠️ The navigation menu and the footer are repeated on every page.
+If you add a new tab, update the `<nav>` in **all** HTML files.
 
-## Publicación
+## Changing colors or fonts
 
-GitHub Pages publica automáticamente la rama `main` de este repositorio
-(`m3bn.github.io`). Los cambios tardan 1–2 minutos en verse online.
-Se recomienda editar mediante pull requests para que otro miembro revise.
+Everything is defined as variables at the top of `assets/css/style.css`
+(`:root` section). Changing a color there changes it across the whole site.
+
+## Publishing
+
+GitHub Pages automatically publishes the `main` branch of this repository
+(`m3bn.github.io`). Changes go live within 1–2 minutes.
+Editing through pull requests is recommended so another member can review.

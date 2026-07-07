@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Software · M3BN</title>
-  <meta name="description" content="Open-source code, scripts and simulation tools developed by the M3BN group.">
+  <title>Publications · M3BN</title>
+  <meta name="description" content="Scientific publications of the M3BN group, INIFTA, UNLP, CONICET.">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -33,42 +33,45 @@
 
   <section class="page-header">
     <div class="container">
-      <p class="eyebrow">Open source</p>
-      <h1>Software</h1>
+      <p class="eyebrow">Scientific output</p>
+      <h1>Publications</h1>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <p>We publish the code associated with our work in the
-      <a href="https://github.com/m3bn">m3bn GitHub organization</a>.
-      These are some of our repositories:</p>
-    </div>
-  </section>
+  <!-- ============================================================
+       HOW TO ADD A PUBLICATION:
+       Copy an <article class="publication with-toc"> block under the
+       corresponding <h2 class="year"> heading. If it is a new year,
+       add the year heading first.
+       TOC graphics go in assets/img/tocs/ (e.g. tocs/2026-smith.png).
+       If a paper has no TOC figure, use class="publication" (without
+       "with-toc") and delete the <img> line.
+       ============================================================ -->
 
   <section class="section">
     <div class="container">
-      <div class="grid">
-        <!-- EDIT: one card per group repository -->
-        <article class="card">
-          <p class="tag">Repository</p>
-          <h3><a href="https://github.com/m3bn/repo-name">repo-name</a></h3>
-          <p>Short description: what the code does, which paper it is associated
-          with, and what language it uses.</p>
-        </article>
-        <article class="card">
-          <p class="tag">Scripts</p>
-          <h3><a href="https://github.com/m3bn/">simulation-analysis</a></h3>
-          <p>Analysis and post-processing scripts for molecular dynamics
-          trajectories.</p>
-        </article>
-        <article class="card">
-          <p class="tag">Tutorials</p>
-          <h3><a href="https://github.com/m3bn/">tutorials</a></h3>
-          <p>Internal guides for new members: using the cluster, first steps
-          in molecular simulation.</p>
-        </article>
-      </div>
+
+      <h2 class="year">2026</h2>
+
+      <article class="publication with-toc">
+        <img class="toc" src="assets/img/tocs/example-toc.png" alt="Graphical abstract">
+        <div>
+          <p class="title">Title of the published article</p> <!-- EDIT -->
+          <p class="authors">A. Lastname, B. Lastname, C. Lastname</p>
+          <p class="venue">Journal Name, vol., pages (2026)</p>
+          <p class="doi"><a href="https://doi.org/10.xxxx/xxxxx">doi:10.xxxx/xxxxx</a></p>
+        </div>
+      </article>
+
+      <h2 class="year">2025</h2>
+
+      <article class="publication">
+        <p class="title">Another article title (no TOC figure)</p>
+        <p class="authors">A. Lastname, B. Lastname</p>
+        <p class="venue">Journal Name, vol., pages (2025)</p>
+        <p class="doi"><a href="https://doi.org/10.xxxx/xxxxx">doi:10.xxxx/xxxxx</a></p>
+      </article>
+
     </div>
   </section>
 
