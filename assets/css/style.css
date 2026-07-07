@@ -314,19 +314,19 @@ a:focus-visible, button:focus-visible {
 /* Layout with a TOC figure beside the reference */
 .publication.with-toc {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 1.1rem;
+  grid-template-columns: 220px 1fr;
+  gap: 1.4rem;
   align-items: center;
 }
 .publication .toc {
-  width: 140px;
+  width: 220px;
   border: 1px solid var(--border);
   border-radius: 6px;
   background: var(--white);
 }
 @media (max-width: 560px) {
   .publication.with-toc { grid-template-columns: 1fr; }
-  .publication .toc { width: 180px; }
+  .publication .toc { width: 100%; max-width: 320px; }
 }
 
 .publication .title { font-weight: 600; }
