@@ -443,3 +443,102 @@ a:focus-visible, button:focus-visible {
 /* Let the header bar use more width than the page content,
    so the 8-item menu has room to breathe on wide screens. */
 .header .container { max-width: 1200px; }
+
+/* ---------- Conference venue cards (grouped by event) ---------- */
+
+.venue-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Left column: logo + optional abstract-book link */
+.venue-card .venue-logo { text-align: center; }
+.venue-card .venue-logo img {
+  width: 110px;
+  border-radius: 8px;
+}
+/* Text fallback for events without a logo image */
+.venue-card .venue-logo .logo-text {
+  width: 110px;
+  height: 70px;
+  border-radius: 8px;
+  background: var(--panel-blue);
+  color: var(--blue);
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.venue-card .venue-logo a {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+/* Right column: event header + list of presentations */
+.venue-card .venue-name {
+  font-family: var(--f-display);
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 0.15rem;
+}
+.venue-card .venue-meta {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  color: var(--gray-text);
+  margin-bottom: 0.9rem;
+}
+
+/* Each presentation within a venue */
+.venue-card .pres {
+  border-left: 3px solid var(--mid-blue);   /* talk = blue */
+  padding-left: 0.85rem;
+  margin-bottom: 0.85rem;
+  border-radius: 0;
+}
+.venue-card .pres:last-child { margin-bottom: 0; }
+.venue-card .pres.poster { border-left-color: var(--sky); }  /* poster = sky */
+
+.venue-card .pres .kind {
+  font-family: var(--f-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--mid-blue);
+}
+.venue-card .pres.poster .kind { color: var(--blue); }
+
+.venue-card .pres .pres-title {
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin: 0.1rem 0 0.05rem;
+}
+.venue-card .pres .pres-authors {
+  font-size: 0.85rem;
+  color: var(--gray-text);
+}
+.venue-card .pres .pres-authors strong { color: var(--blue); }
+
+.venue-card .pres .award {
+  font-size: 0.8rem;
+  color: var(--mid-blue);
+  margin-top: 0.15rem;
+}
+
+/* Stack on mobile */
+@media (max-width: 560px) {
+  .venue-card { grid-template-columns: 1fr; gap: 1rem; }
+  .venue-card .venue-logo .logo-text,
+  .venue-card .venue-logo img { margin: 0 auto; }
+}
