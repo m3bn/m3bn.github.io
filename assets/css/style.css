@@ -439,3 +439,7 @@ a:focus-visible, button:focus-visible {
    institute line must never wrap to a second row. */
 .brand { flex-shrink: 0; }
 .brand .institute { white-space: nowrap; }
+
+/* Let the header bar use more width than the page content,
+   so the 8-item menu has room to breathe on wide screens. */
+.header .container { max-width: 1320px; }
