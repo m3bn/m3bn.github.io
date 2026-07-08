@@ -432,3 +432,10 @@ a:focus-visible, button:focus-visible {
   .nav.open { display: block; }
   .nav ul { flex-direction: column; }
 }
+
+/* ---------- Brand fix: keep "INIFTA · UNLP · CONICET" on one line ---------- */
+
+/* The brand must not shrink when the nav needs room, and its
+   institute line must never wrap to a second row. */
+.brand { flex-shrink: 0; }
+.brand .institute { white-space: nowrap; }
