@@ -442,4 +442,4 @@ a:focus-visible, button:focus-visible {
 
 /* Let the header bar use more width than the page content,
    so the 8-item menu has room to breathe on wide screens. */
-.header .container { max-width: 1040px; }
+.header .container { max-width: 1200px; }
