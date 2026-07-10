@@ -536,6 +536,12 @@ a:focus-visible, button:focus-visible {
   margin-top: 0.15rem;
 }
 
+.venue-card .pres .pres-link {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+}
+
 /* Stack on mobile */
 @media (max-width: 560px) {
   .venue-card { grid-template-columns: 1fr; gap: 1rem; }
