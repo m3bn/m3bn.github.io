@@ -462,7 +462,7 @@ a:focus-visible, button:focus-visible {
 .venue-card .venue-logo { text-align: center; }
 .venue-card .venue-logo img {
   width: 110px;
-  border-radius: 8px;
+  /* border-radius: 8px; */
 }
 /* Text fallback for events without a logo image */
 .venue-card .venue-logo .logo-text {
