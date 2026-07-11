@@ -180,6 +180,29 @@ a:focus-visible, button:focus-visible {
 
 .hero .chain { margin-top: 2.5rem; opacity: 0.9; }
 
+/* ---------- Hero two-column layout (text + image) ---------- */
+
+.hero .hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero .hero-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* Stack on narrower screens */
+@media (max-width: 860px) {
+  .hero .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .hero .hero-image { order: -1; }  /* image on top when stacked; remove this line to keep it below */
+}
+
 /* ---------- Inner page headers ---------- */
 
 .page-header {
