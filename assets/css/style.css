@@ -184,13 +184,14 @@ a:focus-visible, button:focus-visible {
 
 .hero .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
   align-items: center;
 }
 
 .hero .hero-image img {
   width: 100%;
+   min-width: 480px;
   height: auto;
 }
 
