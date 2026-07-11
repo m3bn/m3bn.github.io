@@ -160,7 +160,7 @@ a:focus-visible, button:focus-visible {
   font-weight: 700;
   font-size: clamp(1.9rem, 4.5vw, 3rem);
   line-height: 1.15;
-  max-width: 25ch;
+  max-width: 35ch;
   margin: 0.75rem 0 1.25rem;
 }
 
@@ -199,7 +199,7 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 860px) {
   .hero .hero-grid {
     grid-template-columns: 1fr;
-    gap: -2rem;
+    gap: -3rem;
   }
   .hero .hero-image { order: -1; }  /* image on top when stacked; remove this line to keep it below */
 }
