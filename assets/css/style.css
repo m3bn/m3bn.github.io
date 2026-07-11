@@ -199,7 +199,7 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 860px) {
   .hero .hero-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: -2rem;
   }
   .hero .hero-image { order: -1; }  /* image on top when stacked; remove this line to keep it below */
 }
