@@ -160,7 +160,7 @@ a:focus-visible, button:focus-visible {
   font-weight: 700;
   font-size: clamp(1.9rem, 4.5vw, 3rem);
   line-height: 1.15;
-  max-width: 21ch;
+  max-width: 23ch;
   margin: 0.75rem 0 1.25rem;
 }
 
