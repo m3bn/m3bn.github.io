@@ -591,3 +591,8 @@ a:focus-visible, button:focus-visible {
   .venue-card .venue-logo .logo-text,
   .venue-card .venue-logo img { margin: 0 auto; }
 }
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
