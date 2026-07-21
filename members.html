@@ -276,7 +276,7 @@
       <div>
         <h4>M3BN</h4>
         <p>Molecular Modeling of Soft and Nanostructured Materials group.</p>
-        <!-- <p>Part of the <a href="https://softmatter.quimica.unlp.edu.ar/">Soft Matter Laboratory</a>.</p> --!>
+        <!-- <p>Part of the <a href="https://softmatter.quimica.unlp.edu.ar/">Soft Matter Laboratory</a>.</p> -->
       </div>
       <div>
         <h4>Location</h4>
@@ -288,7 +288,7 @@
         <p>
           <a href="https://github.com/m3bn">GitHub</a> <!-- ·
           <a href="https://www.instagram.com/softmatterlab/">Instagram</a> ·
-          <a href="https://twitter.com/softmatterlab">X</a> --!>
+          <a href="https://twitter.com/softmatterlab">X</a> -->
         </p>
       </div>
       <p class="legal">© 2026 M3BN · INIFTA · UNLP · CONICET</p>
@@ -296,5 +296,37 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all "Resume" toggle links
+    const toggles = document.querySelectorAll('.resume-toggle');
+
+    toggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent page from jumping to top
+
+        // Find the parent article (card) of this specific toggle
+        const card = this.closest('.member');
+        // Find the hidden content block inside the same card
+        const content = card.querySelector('.resume-content');
+
+        // Toggle the 'resume-open' class
+        const isOpening = content.classList.toggle('resume-open');
+
+        // Change the link text
+        this.textContent = isOpening ? 'Hide CV' : 'Resume';
+      });
+    });
+  });
+</script>
+
+
+
+
+  
 </body>
 </html>
