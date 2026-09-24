@@ -65,20 +65,23 @@ function filterPublications(keep, prefix, label) {
   const showAll = document.createElement('a');
   showAll.href = 'publications.html';
   showAll.textContent = 'Show all';
-  notice.append(`Showing publications ${prefix} `, strong, ' · ', showAll);
+  //notice.append(`Showing publications ${prefix} `, strong, ' · ', showAll);
+  notice.append(`${prefix} `, strong, ' · ', showAll);
   pubList.prepend(notice);
 }
 
 if (pubList && lineParam && LINE_NAMES[lineParam]) {
   filterPublications(
     (pub) => (pub.dataset.lines || '').split(/\s+/).includes(lineParam),
-    'on', LINE_NAMES[lineParam]
+    //'on', LINE_NAMES[lineParam]
+    'Showing publications on', LINE_NAMES[lineParam]
   );
 } else if (pubList && authorParam) {
   const target = normalize(authorParam);
   filterPublications(
     (pub) => normalize(pub.querySelector('.authors')?.textContent || '').includes(target),
-    'by', authorParam
+    //'by', authorParam
+    'Showing M3BN publications co-authored by', authorParam
   );
 }
 
