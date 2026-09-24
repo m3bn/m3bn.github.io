@@ -641,3 +641,30 @@ html, body {
 .resume-toggle:hover {
   text-decoration: underline;
 }
+
+/* Hidden elements must stay hidden even when they have a display rule */
+[hidden] { display: none !important; }
+
+/* Notice shown only when publications are filtered by research line */
+.filter-notice {
+  background: var(--panel-blue);
+  border-radius: var(--radius);
+  padding: 0.75rem 1.1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Research line cards that link to their publications */
+.card.line-card { position: relative; }
+.card .card-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+}
+/* Stretch the link over the whole card so it is all clickable */
+.card .card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
