@@ -17,10 +17,13 @@ document.querySelectorAll('.nav a').forEach((link) => {
   if (link.getAttribute('href') === current) link.classList.add('active');
 });
 
-// ---------- Filter publications by research line ----------
+// ---------- Filter publications (by research line or by author) ----------
 // Papers carry an invisible data-lines attribute (e.g. data-lines="line02").
 // Opening publications.html?line=line02 shows only matching papers.
-// Without the parameter, the page is left untouched.
+// Research line: publications.html?line=line02   -> papers tagged data-lines="line02"
+// Author:        publications.html?author=Longo  -> papers whose author list contains
+//                that surname (ignores accents and upper/lower case, no tags needed)
+// Without parameters, the page is left untouched.
 const LINE_NAMES = {
   line01: 'Stimuli-responsive polymers and gels',
   line02: 'Protein and peptide adsorption at inorganic interfaces',
@@ -29,14 +32,18 @@ const LINE_NAMES = {
   line05: 'Nanofluidics and ion transport',
 };
 
-const lineParam = new URLSearchParams(location.search).get('line');
+const params = new URLSearchParams(location.search);
+const lineParam = params.get('line');
+const authorParam = params.get('author');
 const pubList = document.querySelector('.publication')?.parentElement;
 
-if (lineParam && LINE_NAMES[lineParam] && pubList) {
-  // Hide papers not tagged with this line
+// Removes accents and case, so "Pérez-Chávez" also matches "perez-chavez"
+const normalize = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+function filterPublications(keep, prefix, label) {
+  // Hide papers that don't match
   document.querySelectorAll('.publication').forEach((pub) => {
-    const lines = (pub.dataset.lines || '').split(/\s+/);
-    if (!lines.includes(lineParam)) pub.hidden = true;
+    if (!keep(pub)) pub.hidden = true;
   });
 
   // Hide year headings left with no visible papers
@@ -50,9 +57,28 @@ if (lineParam && LINE_NAMES[lineParam] && pubList) {
     if (!visible) year.hidden = true;
   });
 
-  // Small notice so visitors know the list is filtered
+  // Notice with a "Show all" link
   const notice = document.createElement('p');
   notice.className = 'filter-notice';
-  notice.innerHTML = `Showing publications on <strong>${LINE_NAMES[lineParam]}</strong> · <a href="publications.html">Show all</a>`;
+  const strong = document.createElement('strong');
+  strong.textContent = label;
+  const showAll = document.createElement('a');
+  showAll.href = 'publications.html';
+  showAll.textContent = 'Show all';
+  notice.append(`Showing publications ${prefix} `, strong, ' · ', showAll);
   pubList.prepend(notice);
 }
+
+if (pubList && lineParam && LINE_NAMES[lineParam]) {
+  filterPublications(
+    (pub) => (pub.dataset.lines || '').split(/\s+/).includes(lineParam),
+    'on', LINE_NAMES[lineParam]
+  );
+} else if (pubList && authorParam) {
+  const target = normalize(authorParam);
+  filterPublications(
+    (pub) => normalize(pub.querySelector('.authors')?.textContent || '').includes(target),
+    'by', authorParam
+  );
+}
+
