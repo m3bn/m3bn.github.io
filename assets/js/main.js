@@ -81,7 +81,7 @@ if (pubList && lineParam && LINE_NAMES[lineParam]) {
   filterPublications(
     (pub) => normalize(pub.querySelector('.authors')?.textContent || '').includes(target),
     //'by', authorParam
-    'Showing M3BN publications co-authored by', authorParam
+    'Showing publications co-authored by', authorParam
   );
 }
 
